@@ -1,0 +1,59 @@
+/*serviciorutina.html*/
+#container_toma_datos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #d8f3dc;
+}
+
+.boton{
+    background-color:#74c69d;
+    border-radius: 5px;
+    box-shadow: -2 -2 5px #40916c;
+    font-size: 1rem;
+}
+
+#container_muestra_ingresos{
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+h2{
+    font-size: 20px;
+}
+
+#btnLimpiar{
+    margin-top: 2vh;
+}
+
+.resultados{
+    padding: 2vh;
+    margin: 2.5vh;
+    background-color:#74c69d;
+    border-radius: 5px;
+    box-shadow: -2 -2 5px #40916c;
+    font-size: 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+}
+    
+.titulo_analisis{
+    font-size: 2rem;
+}
+
+.total_analisis{
+    font-style: italic;
+}
+
+.titulo_orden_carga{
+    margin-top: 5vh;
+    color: black;
+    font-size: 2.5rem;
+}
