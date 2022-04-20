@@ -98,6 +98,8 @@ function init() {
     caja_contenedora_datos.setAttribute("id", "contenedor");
     contenedor_entrenamientos.append(caja_contenedora_datos);
     caja_contenedora_datos.innerHTML = "";
+
+    
     if (registros_core.length == 0) {
       if (document.getElementById("contenedor").children.length < 1) {
         caja_contenedora_datos.innerHTML = `<h2>No hay datos Cargados</h2>`;
@@ -133,8 +135,6 @@ function init() {
           let objetivo = e.target.id;
           registros_core.splice(objetivo, 1);
           caja_contenedora_datos.innerHTML = "";
-          contenedor_entrenamientos.innerHTML = "";
-          boton_limpiar.remove();
         }
       }
 
@@ -161,7 +161,9 @@ function init() {
     ventana_subida.innerHTML = `<h4>¡Has subido correctamente tus entrenamientos!</h4>`;
       let string_registros = JSON.stringify(registros_core);
     localStorage.setItem("entrenamientos", string_registros);
-  }
+
+    registros_core.length >2 ? swal({title:"¡Estas avanzando en tu objetivo a largo plazo!",text:"Continua para ver la mejor versión de ti mismo.", icon:"success"}) : swal({title:"Intenta mejorar", text:"Recuerda encontrar cosas que disfrutes de tu entrenamiento, haz amigos durante tus entrenamientos, e intenta definir un buen horario. De esta manera vas a trabajar mejor tu disciplina", icon:"info"});
+    }
 
   
 
@@ -212,5 +214,4 @@ function init() {
       }
     }
   }
-  
 }
