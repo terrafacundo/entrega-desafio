@@ -85,6 +85,16 @@ function init() {
       });
       console.log(registros_core);
 
+      Toastify({
+        text: "Entrenamiento Completado.",
+        duration: 1500,
+        newWindow: true,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right, #40916c, #74c69d)",
+        },
+      }).showToast();
       formulario.innerHTML = "";
     }
   }
@@ -132,9 +142,20 @@ function init() {
         //funcion
 
         function borrar_actividad(e) {
+          
           let objetivo = e.target.id;
           registros_core.splice(objetivo, 1);
           caja_contenedora_datos.innerHTML = "";
+          Toastify({
+            text: "Entrenamiento Eliminado.",
+            duration: 1500,
+            newWindow: true,
+            gravity: "top",
+            position: "right",
+            style: {
+              background: "linear-gradient(to right, #40916c, #74c69d)",
+            },
+          }).showToast();
         }
       }
 
@@ -142,6 +163,7 @@ function init() {
               function limpiar(){
                 
                 container_muestra_ingresos.innerHTML="";
+
               }
 
               //boton limpiar
@@ -158,7 +180,16 @@ function init() {
   function subir_actividad() {
     let ventana_subida = document.createElement("div");
     container_toma_datos.append(ventana_subida);
-    ventana_subida.innerHTML = `<h4>¡Has subido correctamente tus entrenamientos!</h4>`;
+      Toastify({
+        text: "¡Actividades subidas correctamente!",
+        duration: 2000,
+        newWindow: true,
+        gravity: "top",
+        position: "right",
+        style: {
+          background: "linear-gradient(to right, #40916c, #74c69d)",
+        },
+      }).showToast();
       let string_registros = JSON.stringify(registros_core);
     localStorage.setItem("entrenamientos", string_registros);
 
